@@ -71,7 +71,7 @@ defmodule Hangman.Impl.GameTest do
       {game, tally} = Game.make_move(game, "m")
       assert tally.game_state == :good_guess
 
-      {game, tally} = Game.make_move(game, "t")
+      {_game, tally} = Game.make_move(game, "t")
       assert tally.game_state == :good_guess
     end
 
@@ -84,8 +84,15 @@ defmodule Hangman.Impl.GameTest do
       {game, tally} = Game.make_move(game, "t")
       assert tally.game_state == :good_guess
 
-      {game, tally} = Game.make_move(game, "y")
+      {_game, tally} = Game.make_move(game, "y")
       assert tally.game_state == :bad_guess
+    end
+
+    test "reads capitalized guesses as downcase" do
+      game = Game.new_game("wombat")
+
+      {_game, tally} = Game.make_move(game, "T")
+      assert tally.game_state == :good_guess
     end
   end
 

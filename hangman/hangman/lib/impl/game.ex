@@ -37,8 +37,10 @@ defmodule Hangman.Impl.Game do
     do: return_with_tally(game)
 
   def make_move(game, guess) do
+    downcased_guess = String.downcase(guess)
+
     game
-    |> accept_guess(guess, MapSet.member?(game.used, guess))
+    |> accept_guess(guess, MapSet.member?(game.used, downcased_guess))
     |> return_with_tally()
   end
 
@@ -47,8 +49,10 @@ defmodule Hangman.Impl.Game do
   end
 
   defp accept_guess(game, guess, _already_used) do
-    %{game | used: MapSet.put(game.used, guess)}
-    |> score_guess(Enum.member?(game.letters, guess))
+    downcased_guess = String.downcase(guess)
+
+    %{game | used: MapSet.put(game.used, downcased_guess)}
+    |> score_guess(Enum.member?(game.letters, downcased_guess))
   end
 
   defp score_guess(game, _good_guess = true) do
