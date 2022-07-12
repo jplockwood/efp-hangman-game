@@ -23,7 +23,9 @@ Session 2 notes:
 - Perhaps discuss the rant about cyclomatic complexity at the end of Let’s Start Coding / Pattern Matching Game State
 - I like the reminder of the Single Responsibility Principle, maybe I should drive that idea home. (and maybe SOLID in general)
 - Once at the end of this session’s content, take note of how little Dave uses anonymous functions. While anonymous functions are convenient and are nifty to use, named functions are actually better for readability (especially when the contents of the anonymous function are large…more than a few lines).
+- TODO: Difficult challenge in Write a Text-based Client/Finish Up the Text Client
 
 Session 3 (% completion)
 
 - Write a Text-based Client
+- Refactor the Dictionary
