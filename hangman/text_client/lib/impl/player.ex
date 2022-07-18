@@ -16,10 +16,14 @@ defmodule TextClient.Impl.Player do
 
   def interact({_game, _tally = %{game_state: :won}}) do
     IO.puts([IO.ANSI.cyan(), "Congratulations! You've won!"])
+
+    {:ok, :won}
   end
 
   def interact({_game = %{letters: letters}, _tally = %{game_state: :lost}}) do
     IO.puts("Sorry, you've lost ... the word was #{IO.ANSI.light_red()}#{Enum.join(letters)}")
+
+    {:ok, :lost}
   end
 
   def interact(_state = {game, tally}) do

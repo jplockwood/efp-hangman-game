@@ -2,7 +2,7 @@ defmodule DictionaryTest do
   use ExUnit.Case
   doctest Dictionary
 
-  test "greets the world" do
-    assert Dictionary.hello() == :world
+  test "start/0" do
+    assert is_list(Dictionary.start())
   end
 end
