@@ -29,3 +29,9 @@ Session 3 (48% completion)
 
 - Write a Text-based Client
 - Refactor the Dictionary
+
+Session 4 (61% completion)
+
+- Processes and Maintaining State
+- Use an Agent for the Dictionary
+- Applications: Making Our Code Independent
